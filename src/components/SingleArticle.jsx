@@ -42,7 +42,11 @@ class SingleArticle extends Component {
           <p>author: {article.author}</p>
           <p>created_at: {article.created_at}</p>
           <p>comment_count: {article.comment_count}</p>
-          <Voter article_id={article.article_id} votes={article.votes} />
+          <Voter
+            article_id={article.article_id}
+            votes={article.votes}
+            type={"articles"}
+          />
           <br />
         </section>
 

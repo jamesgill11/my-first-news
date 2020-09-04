@@ -14,8 +14,6 @@ class CommentAdder extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     const { username, body } = this.state;
-    console.log(username);
-    console.log(body);
     api.postComment(this.props.article_id, username, body).then((comment) => {
       this.props.addComments(comment);
       this.setState({ username: "", body: "" });

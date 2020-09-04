@@ -32,14 +32,15 @@ export const postComment = (article_id, username, body) => {
     });
 };
 
-export const patchVotes = (article_id, votes) => {
-  return instance.patch(`/articles/${article_id}`, { votes }).then((res) => {
-    return res.data;
-  });
+export const patchVotes = (article_id, inc_votes, type) => {
+  return instance
+    .patch(`/${type}/${article_id}`, { inc_votes: inc_votes })
+    .then((res) => {
+      return res.data;
+    });
 };
 
 export const delComment = (comment_id) => {
-  console.log(comment_id);
   return instance
     .delete(`/comments/${comment_id}`, { params: { comment_id } })
     .then((res) => {

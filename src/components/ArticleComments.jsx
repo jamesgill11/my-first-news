@@ -19,8 +19,10 @@ class ArticleCommnets extends Component {
   };
 
   addComments = (newComment) => {
-    this.setState((prevState) => {
-      return { comments: [newComment, ...prevState.comments] };
+    this.setState((currentState, prevState) => {
+      return {
+        comments: [newComment, ...currentState.comments],
+      };
     });
   };
 
@@ -45,6 +47,7 @@ class ArticleCommnets extends Component {
           return (
             <section className="comment__section" key={comment.comment_id}>
               <li className="comments__list">
+                <p>Votes: {comment.votes}</p>
                 <p> author: {comment.author}</p>
                 <p>created at: {comment.created_at}</p>
                 <p>{comment.body}</p>
@@ -57,7 +60,11 @@ class ArticleCommnets extends Component {
                 </button>
                 <br />
                 <br />
-                <Voter article_id={comment.comment_id} votes={comment.votes} />
+                <Voter
+                  article_id={comment.comment_id}
+                  votes={comment.votes}
+                  type={"comments"}
+                />
               </li>
               <br />
             </section>

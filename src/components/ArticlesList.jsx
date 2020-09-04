@@ -27,7 +27,7 @@ class ArticlesList extends Component {
     }
   }
   getArticles = () => {
-    return api.getAllArticles(this.props.topic, this.state.sort_bywzws);
+    return api.getAllArticles(this.props.topic, this.state.sort_by);
   };
 
   handleChange = (event) => {

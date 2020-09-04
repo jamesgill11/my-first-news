@@ -7,7 +7,7 @@ class Voter extends Component {
   };
 
   handleVote = (vote) => {
-    api.patchVotes(this.props.article_id, vote);
+    api.patchVotes(this.props.article_id, vote, this.props.type);
     this.setState((currentState) => {
       return {
         optaVotes: currentState.optaVotes + vote,
