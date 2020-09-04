@@ -26,10 +26,10 @@ class ArticleCommnets extends Component {
 
   deleteComments = (id) => {
     api.delComment(id);
-    this.setState((currentState) => {
-      return {
-        comments: [currentState.comments.id !== id],
-      };
+    const idToRemove = this.state.comments;
+
+    this.setState(() => {
+      return { [idToRemove]: id, ...idToRemove };
     });
   };
 
