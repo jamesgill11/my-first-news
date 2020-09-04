@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ArticlesList from "./components/ArticlesList";
+import Title from "./components/Title";
+import { Router } from "@reach/router";
+import Nav from "./components/Nav";
+import Home from "./components/Home";
+import "./App.css";
+import SingleArticle from "./components/SingleArticle";
+import ErrorPage from "./components/ErrorPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    user: "weegembump",
+  };
+
+  render() {
+    const { user } = this.state;
+    return (
+      <div className="App">
+        <Title />
+        <Nav />
+        <Router>
+          <Home path="/" />
+          <ArticlesList path="/articles" />
+          <ArticlesList path="/articles/:topic" />
+          <SingleArticle path="/article/:article_id" user={user} />
+          <ErrorPage default status={404} msg={"Page not found"} />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
