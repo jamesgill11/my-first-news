@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import ArticleComments from "./ArticleComments";
-// import CommentAdder from "./CommentAdder";
+
 import Voter from "./Voter";
 import ErrorPage from "./ErrorPage";
 
