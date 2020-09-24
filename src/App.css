@@ -7,12 +7,7 @@ body {
 
 body {
   background: rgb(204, 201, 204);
-  background: linear-gradient(
-    153deg,
-    rgba(204, 201, 204, 1) 0%,
-    rgba(193, 183, 195, 1) 67%,
-    rgba(216, 216, 227, 1) 90%
-  );
+
   background-position-x: center;
   background-position-y: bottom;
   background-repeat: no-repeat;
@@ -66,26 +61,14 @@ body {
 }
 
 .header--title__page {
+  font-family: cursive;
+  font-size: 60px;
   text-decoration: underline;
 }
 
 .list__articles {
   text-decoration: none;
   border: 2px solid goldenrod;
-}
-
-.home__link {
-  display: flex;
-  background-color: red;
-  box-shadow: 0 5px 0 darkred;
-  color: white;
-  padding: 0.2em 0.5em;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  margin: 0.5em;
-  width: auto;
-  justify-content: center;
 }
 
 .home__link:hover {
@@ -102,17 +85,17 @@ body {
 }
 
 .articles__link {
-  display: flex;
-  background-color: red;
-  box-shadow: 0 5px 0 darkred;
-  color: white;
+  background-color: #e6e2e2;
+  box-shadow: 2px 2px 0 #ccc;
+  border: 1px solid red;
+  color: black;
   padding: 0.2em 0.5em;
-  position: relative;
+  align-content: flex-start;
+
   text-decoration: none;
   text-transform: uppercase;
-  margin: 0.5em;
-  width: auto;
-  justify-content: center;
+  width: fit-content;
+  margin-left: 610px;
 }
 
 .articles__link:hover {
@@ -131,9 +114,16 @@ body {
 .topic__buttons {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
-  margin: 1em;
+  width: 0 auto;
+  border: 1px solid red;
+  width: fit-content;
+  margin-left: 560px;
+  margin-top: 1rem;
 }
+
+/* Articles Section */
 
 .flex__container {
   display: flex;
@@ -148,6 +138,8 @@ body {
     rgba(193, 183, 195, 1) 67%,
     rgba(216, 216, 227, 1) 90%
   );
+
+  border: 1px solid red;
   margin: 1rem;
   height: auto;
   width: 300px;
@@ -156,19 +148,24 @@ body {
 
 .article__title--link {
   text-decoration: none;
-
-  color: white;
+  color: blue;
 }
+
+/* Comment Section */
 
 .comments__list {
   list-style-type: none;
 }
 
 .comment__section {
-  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
   margin-top: 0.5em;
   width: 500px;
   margin: auto auto;
+  margin-bottom: 1em;
+  padding: 1em;
 }
 
 .comment__form--adder {
@@ -176,9 +173,31 @@ body {
   flex-direction: column;
   align-items: left;
 }
+.comment__title {
+  text-decoration: underline;
+}
+
+/* Comment Adder */
+
+.addercomment__title {
+  text-decoration: underline;
+}
+
+.username {
+  margin: 10px;
+}
+
+/* Single article */
 
 .single__article {
-  margin: 0.5em;
-
+  display: flex;
+  flex-direction: column;
+  margin: 5.5em;
+  width: 0 auto;
   border-bottom: 2px purple solid;
+  margin-top: 0;
+}
+
+.single--article__title {
+  text-decoration: underline;
 }

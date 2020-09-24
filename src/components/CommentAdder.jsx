@@ -16,15 +16,17 @@ class CommentAdder extends Component {
     const { username, body } = this.state;
     api.postComment(this.props.article_id, username, body).then((comment) => {
       this.props.addComments(comment);
-      this.setState({ username: "", body: "" });
+      // this.setState({ username: "", body: "" });
     });
   };
   render() {
     return (
       <div>
-        <h2>Add new Comment</h2>
-        <form onSubmit={this.handleSubmit} className="comment__form__adder">
-          <label htmlFor="username">Username: </label>
+        <h2 class="addercomment__title">Add new Comment</h2>
+        <form onSubmit={this.handleSubmit} class="comment__form__adder">
+          <label htmlFor="username" class="username">
+            Username:{" "}
+          </label>
           <br />
           <input
             type="text"
@@ -33,9 +35,12 @@ class CommentAdder extends Component {
             onChange={this.handleChange}
           />
           <br />
-          <label htmlFor="body">Comment: </label>
+          <label htmlFor="body" class="comment">
+            Comment:{" "}
+          </label>
           <br />
           <textarea
+            type="text"
             id="body"
             name="body"
             rows="4"

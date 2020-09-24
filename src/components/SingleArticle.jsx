@@ -35,13 +35,13 @@ class SingleArticle extends Component {
     return (
       <main>
         <section className="single__article">
-          <h3>{article.title}</h3>
+          <h3 class="single--article__title">{article.title}</h3>
           <p>{article.body}</p>
-          <p>votes: {article.votes}</p>
-          <p>topic: {article.topic}</p>
-          <p>author: {article.author}</p>
-          <p>created_at: {article.created_at}</p>
-          <p>comment_count: {article.comment_count}</p>
+          <p>Votes: {article.votes}</p>
+          <p>Topic: {article.topic}</p>
+          <p>Author: {article.author}</p>
+          <p>Created_at: {article.created_at}</p>
+          <p>Comment_count: {article.comment_count}</p>
           <Voter
             article_id={article.article_id}
             votes={article.votes}

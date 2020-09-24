@@ -42,14 +42,14 @@ class ArticleCommnets extends Component {
     if (isLoading) return <p>Loading....</p>;
     return (
       <div>
-        <h3>Comments</h3>
+        <h3 class="comment__title">Comments</h3>
         {comments.map((comment) => {
           return (
             <section className="comment__section" key={comment.comment_id}>
               <li className="comments__list">
                 <p>Votes: {comment.votes}</p>
-                <p> author: {comment.author}</p>
-                <p>created at: {comment.created_at}</p>
+                <p> Author: {comment.author}</p>
+                <p>Created at: {comment.created_at}</p>
                 <p>{comment.body}</p>
                 <button
                   onClick={() => {

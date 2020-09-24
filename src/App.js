@@ -3,7 +3,7 @@ import ArticlesList from "./components/ArticlesList";
 import Title from "./components/Title";
 import { Router } from "@reach/router";
 import Nav from "./components/Nav";
-import Home from "./components/Home";
+
 import "./App.css";
 import SingleArticle from "./components/SingleArticle";
 import ErrorPage from "./components/ErrorPage";
@@ -20,8 +20,7 @@ class App extends React.Component {
         <Title />
         <Nav />
         <Router>
-          <Home path="/" />
-          <ArticlesList path="/articles" />
+          <ArticlesList path="/" />
           <ArticlesList path="/articles/:topic" />
           <SingleArticle path="/article/:article_id" user={user} />
           <ErrorPage default status={404} msg={"Page not found"} />
