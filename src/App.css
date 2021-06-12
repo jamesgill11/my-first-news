@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  background: rgb(204, 201, 204);
+  background: rgb(163, 221, 244);
 
   background-position-x: center;
   background-position-y: bottom;
@@ -16,10 +16,6 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 .App {
@@ -87,19 +83,18 @@ body {
 .articles__link {
   background-color: #e6e2e2;
   box-shadow: 2px 2px 0 #ccc;
-  border: 1px solid red;
+  border: 1px solid rgb(247, 239, 239);
   color: black;
   padding: 0.2em 0.5em;
-  align-content: flex-start;
-
-  text-decoration: none;
-  text-transform: uppercase;
   width: fit-content;
-  margin-left: 610px;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 }
 
 .articles__link:hover {
-  background-color: #ce0606;
+  background-color: rgb(189, 183, 183);
+  cursor: pointer;
 }
 
 .articles__link:active {
@@ -108,7 +103,16 @@ body {
 }
 
 .articles__link:visited {
-  background-color: #ccc;
+  background-color: rgb(204, 204, 204);
+}
+
+.articles__button {
+  border: none;
+  cursor: pointer;
+}
+
+.articles__button:hover {
+  background-color: rgb(189, 183, 183);
 }
 
 .topic__buttons {
@@ -116,11 +120,14 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 0 auto;
-  border: 1px solid red;
+  margin: 0 auto;
+  border: 1px solid rgb(247, 239, 239);
   width: fit-content;
-  margin-left: 560px;
-  margin-top: 1rem;
+  margin-top: 1em;
+}
+
+.topic__buttons:hover {
+  background-color: rgb(189, 183, 183);
 }
 
 /* Articles Section */
@@ -130,16 +137,17 @@ body {
   flex-wrap: wrap;
   justify-content: center;
 }
-.articles__list {
+.articles__list,
+.comment__section {
   background: rgb(204, 201, 204);
   background: linear-gradient(
     153deg,
-    rgba(204, 201, 204, 1) 0%,
-    rgba(193, 183, 195, 1) 67%,
+    rgba(216, 216, 227, 1) 0%,
+    rgba(163, 221, 244, 1) 67%,
     rgba(216, 216, 227, 1) 90%
   );
 
-  border: 1px solid red;
+  border: 1px solid rgb(243, 238, 238);
   margin: 1rem;
   height: auto;
   width: 300px;
@@ -147,24 +155,25 @@ body {
 }
 
 .article__title--link {
-  text-decoration: none;
-  color: blue;
+  color: rgb(97, 97, 97);
 }
 
 /* Comment Section */
+
+.comment__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .comments__list {
   list-style-type: none;
 }
 
 .comment__section {
-  display: flex;
-  flex-direction: column;
   border: 1px solid red;
-  margin-top: 0.5em;
-  width: 500px;
-  margin: auto auto;
-  margin-bottom: 1em;
+  width: 25%;
+  margin: 0.5em 0.5em 0.5em 1em;
   padding: 1em;
 }
 

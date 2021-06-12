@@ -42,41 +42,45 @@ class ArticleCommnets extends Component {
     if (isLoading) return <p>Loading....</p>;
     return (
       <div>
-        <h3 class="comment__title">Comments</h3>
-        {comments.map((comment) => {
-          return (
-            <section className="comment__section" key={comment.comment_id}>
-              <li className="comments__list">
-                <p>Votes: {comment.votes}</p>
-                <p> Author: {comment.author}</p>
-                <p>Created at: {comment.created_at}</p>
-                <p>{comment.body}</p>
-                <button
-                  onClick={() => {
-                    this.deleteComments(comment.comment_id);
-                  }}
-                >
-                  Delete
-                </button>
+        <div>
+          <h3 class="comment__title">Comments</h3>
+        </div>
+        <div className="comment__container">
+          {comments.map((comment) => {
+            return (
+              <section className="comment__section" key={comment.comment_id}>
+                <li className="comments__list">
+                  <p>Votes: {comment.votes}</p>
+                  <p> Author: {comment.author}</p>
+                  <p>Created at: {comment.created_at}</p>
+                  <p>{comment.body}</p>
+                  <button
+                    onClick={() => {
+                      this.deleteComments(comment.comment_id);
+                    }}
+                  >
+                    Delete
+                  </button>
+                  <br />
+                  <br />
+                  <Voter
+                    article_id={comment.comment_id}
+                    votes={comment.votes}
+                    type={"comments"}
+                  />
+                </li>
                 <br />
-                <br />
-                <Voter
-                  article_id={comment.comment_id}
-                  votes={comment.votes}
-                  type={"comments"}
-                />
-              </li>
-              <br />
-            </section>
-          );
-        })}
-        <section>
-          <CommentAdder
-            key={comments.comment_id}
-            article_id={this.props.article_id}
-            addComments={this.addComments}
-          />
-        </section>
+              </section>
+            );
+          })}
+          <section>
+            <CommentAdder
+              key={comments.comment_id}
+              article_id={this.props.article_id}
+              addComments={this.addComments}
+            />
+          </section>
+        </div>
       </div>
     );
   }

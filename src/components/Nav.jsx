@@ -3,9 +3,9 @@ import { Link } from "@reach/router";
 
 const Nav = () => {
   return (
-    <div>
+    <div className="articles__link">
       <Link to="/ ">
-        <div className="articles__link">Articles</div>
+        <button className="articles__button">Articles</button>
       </Link>
     </div>
   );
